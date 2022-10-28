@@ -44,6 +44,7 @@ public class UsuarioController {
 
     @GetMapping("/usuario/nombre/{nombre}")
     public ResponseEntity listaPorNombre(@PathVariable String nombre) {
+
         return usuarioService.allUsersByName(nombre);
     }
 
@@ -59,7 +60,8 @@ public class UsuarioController {
 
     @DeleteMapping("/usuario/{id}")
     public ResponseEntity eliminarUsuario(@PathVariable Long id) {
-    return usuarioService.deleteUserById(id);
+
+        return usuarioService.deleteUserById(id);
     }
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
