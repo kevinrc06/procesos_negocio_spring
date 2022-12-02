@@ -15,6 +15,7 @@ import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class UsuarioController {
     @Autowired
