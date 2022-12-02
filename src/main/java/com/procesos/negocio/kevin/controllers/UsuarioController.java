@@ -39,6 +39,9 @@ public class UsuarioController {
 
     @GetMapping("/usuarios")
     public ResponseEntity listarUsuario(@RequestHeader(value = "Authorization") String token ) {
+        if(jwtUtil.getKey(token) == null){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("token no valido");
+        }
     return usuarioService.allUsers();
     }
 
